@@ -1,0 +1,14 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x< 0:
+            return False
+        else:
+            he = 0
+            a = x
+            while a != 0:
+                b = a // 10
+                d = a % 10
+                he = he*10 + d
+                a = b
+            if he == x:
+                return True 
