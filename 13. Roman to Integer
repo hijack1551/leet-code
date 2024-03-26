@@ -1,0 +1,16 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        ns = [i for i in s]
+        a = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        n = [0]*len(ns)
+        he = 0
+        for i in range(len(ns)):
+            n[i] = a[ns[i]]
+        he = n[len(n)-1]
+        print(he)
+        for j in range(len(n)-2,-1,-1):                       
+            if n[j] < n[j+1]:
+                he = he - n[j]
+            else:
+                he = he + n[j]
+        return he
