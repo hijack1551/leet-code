@@ -1,0 +1,17 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # expectedNums = list(set(nums))
+        # c = len(expectedNums)
+        # for i in range(len(nums)-1):
+        #     if nums[i] == nums[i+1]:
+        #         expectedNums.append(nums[i])
+        # for i in range(c):
+        #     nums[i] == expectedNums[i]
+        # print(nums)
+        j = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:
+                nums[j] = nums[i]
+                j = j + 1
+        return j
+## can't use set!!! bad!!!
