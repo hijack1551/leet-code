@@ -1,0 +1,8 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        l1 = [i for i in haystack]
+        l2 = [j for j in needle]
+        for k in range(len(l1)-len(l2)+1):
+            if l1[k:k+len(l2)] == l2:
+                return k
+        return -1
