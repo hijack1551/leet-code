@@ -1,0 +1,10 @@
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        r = [[1]]
+        for i in range(rowIndex):
+            n = [1]
+            for j in range(i):
+                n.append(r[i][j]+r[i][j+1])
+            n.append(1)
+            r.append(n)
+        return r[-1]
